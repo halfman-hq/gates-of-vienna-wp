@@ -1,6 +1,6 @@
   <section id="footer">
     <div class="container">
-      <p>Oh cool, a footer</p>
+      <?= get_field('footer_text', 'options'); ?>
     </div>
   </section>
 
