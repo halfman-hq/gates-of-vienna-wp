@@ -71,12 +71,14 @@ get_header();
 
   <section id="about-the-project">
     <div class="container">
+      <h3 class="title">About the Project</h3>
       <?= get_field('about_the_project'); ?>
     </div>
   </section>
 
   <section id="about-the-author">
     <div class="container">
+      <h3 class="title">About the Author</h3>
       <?= get_field('about_the_author'); ?>
     </div>
   </section>

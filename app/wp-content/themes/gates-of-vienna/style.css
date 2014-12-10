@@ -870,6 +870,10 @@ body {
   background-color: #f7f8f1;
   padding: 20px 0;
 }
+#about-the-project .title {
+  font-size: 1.5em;
+  text-align: center;
+}
 #about-the-project p:first-child {
   margin-top: 0;
 }
@@ -883,6 +887,10 @@ body {
 #about-the-author {
   background-color: #f7f8f1;
   padding: 20px 0;
+}
+#about-the-author .title {
+  font-size: 1.5em;
+  text-align: center;
 }
 #about-the-author p:first-child {
   margin-top: 0;

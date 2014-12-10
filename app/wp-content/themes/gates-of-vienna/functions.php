@@ -15,7 +15,7 @@ add_filter('query_vars','wp_insertMyRewriteQueryVars');
 add_filter('wp_loaded','flushRules');
 
 add_theme_support( 'post-thumbnails' );
-set_post_thumbnail_size(500, 500, true);
+set_post_thumbnail_size(500, 350, true);
 add_filter( 'jpeg_quality', 'perfect_jpeg_quality' );
 
 //  add_filter( 'single_template', 'get_single_post_template' );
