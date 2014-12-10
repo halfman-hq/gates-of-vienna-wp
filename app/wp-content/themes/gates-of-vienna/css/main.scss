@@ -59,6 +59,11 @@ body {
   background-color: $offwhite;
   color: #000;
   font-family: 'Breve Slab Title Book';
+
+  @media #{$mq-desktop} {
+    padding-bottom: 94px;
+  }
+
 }
 
 #mfPreviewBar {
@@ -99,10 +104,19 @@ body {
 **  Footer
 */
 #footer {
+  width: 100%;
   padding: $gutter 0;
   background-color: $black;
   color: $green;
   text-align: center;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+
+  @media #{$mq-desktop} {
+    position: fixed;
+  }
+
 }
 
 
