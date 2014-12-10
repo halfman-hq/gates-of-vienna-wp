@@ -1,4 +1,3 @@
-<? get_header(); ?>
 
 <section id="content" class="page container">
 <?
@@ -16,5 +15,3 @@
 ?>
 </section>
 
-
-<? get_footer(); ?>
