@@ -1,0 +1,436 @@
+/*
+**  Media Queries
+*/
+$mq-phone: "only screen and (max-width: 767px)";
+$mq-tablet: "only screen and (min-width: 768px) and (max-width: 1024px)";
+$mq-desktop: "only screen and (min-width: 1025px)";
+
+
+/*
+**  Sizes
+*/
+$gutter: 20px;
+
+
+/*
+**  Colors
+*/
+$brown: #260200;
+$blue: #b4dfe0;
+$green: #b9c991;
+$black: #000;
+$offwhite: #f7f8f1;
+
+/*
+**  Mixins
+*/
+@mixin transition($var) {
+  -webkit-transition: $var;
+  -moz-transition: $var;
+  -ms-transition: $var;
+  -o-transition: $var;
+  transition: $var;
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
+
+
+/**
+* Base Styles
+*/
+* { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
+
+a, a:hover, a:focus, button, button:focus {
+  outline: 0;
+}
+
+.container {
+  width: 100%;
+  max-width: 1024px;
+  margin: 0 auto;
+  padding: 0 $gutter;
+}
+
+body {
+  background-color: $offwhite;
+  color: #000;
+  font-family: 'Breve Slab Title Book';
+}
+
+#mfPreviewBar {
+  display: none !important;
+}
+
+/*
+** Header
+*/
+#header {
+  background-color: $brown;
+  color: #fff;
+  width: 100%;
+  padding: 10px 0;
+  z-index: 1000;
+  text-align: center;
+}
+
+#logo {
+  font-size: 3.0em;
+  color: #fff;
+  text-decoration: none;
+  font-family: 'Breve Slab Title Bold';
+  @include transition(color 0.2s ease-in-out);
+
+  &:visited {
+    color: #fff;
+  }
+
+  &:hover {
+    color: $blue;
+  }
+
+}
+
+
+/*
+**  Footer
+*/
+#footer {
+  padding: $gutter 0;
+  background-color: $black;
+  color: $green;
+  text-align: center;
+}
+
+
+/*
+** Content
+*/
+#content {
+  position: relative;
+  background-color: $offwhite;
+  height: 100%;
+}
+
+
+/*
+** Grid
+*/
+#blog-posts {
+  background-color: $offwhite;
+  padding-top: $gutter;
+  padding-bottom: $gutter;
+}
+
+.grid {
+
+  .grid-item {
+    display: block;
+    float: left;
+    width: 32%;
+    background-color: $blue;
+    position: relative;
+    text-decoration: none;
+
+    @media #{$mq-phone} {
+      width: 100%;
+      float: none;
+      height: auto;
+      min-height: 200px;
+      margin: 0 0 $gutter;
+    }
+
+    .img {
+      display: block;
+      width: 100%;
+      height: auto;
+      @include transition(opacity 0.2s ease-in-out);
+      -webkit-backface-visibility: hidden;
+      -webkit-transform: translateZ(0) scale(1.0, 1.0);
+    }
+
+    .title {
+      text-align: center;
+      color: $black;
+    }
+
+    &:hover .img {
+      opacity: 0.6;
+    }
+
+    & + .grid-item {
+      margin-left: 2%;
+
+      @media #{$mq-phone} {
+        margin-left: 0;
+      }
+
+    }
+    
+  }
+
+}
+
+
+/*
+**  Newsletter Form
+*/
+#newsletter {
+  background-color: $black;
+  color: $green;
+
+  .label {
+    color: $green;
+    text-align: center;
+    display: block;
+    margin-bottom: $gutter/2;
+  }
+
+}
+
+#newsletter-form {
+  text-align: center;
+  padding: $gutter 0;
+}
+
+#newsletter-submit {
+  display: block;
+  font-family: 'Breve Slab Title Medium';
+  margin: auto;
+  background-color: $green;
+  color: $black;
+  border-radius: 4px;
+  border: 0;
+  margin-top: $gutter/2;
+  padding: 6px 10px;
+  @include transition(background-color 0.2s ease-in-out);
+
+  &:hover {
+    background-color: $blue;
+  }
+}
+
+
+/*
+**  Blog
+*/
+.blog-posts {
+  padding-top: 2*$gutter;
+  min-height: 100vh;
+
+  .post {
+    display: block;
+    width: 100%;
+    margin-bottom: 2*$gutter;
+    border-bottom: 1px solid #f6f6f6;
+    padding-bottom: 2*$gutter;
+
+    &:hover {
+
+      .img {
+        opacity: 0.6;
+      }
+
+      .title a {
+        color: $blue;
+      }
+
+    }
+
+    .img-container {
+      float: left;
+      width: 30%;
+      min-height: 1px;
+
+      .img {
+        display: block;
+        max-width: 100%;
+        height: auto;
+        @include transition(opacity 0.2s ease-in-out);
+        -webkit-backface-visibility: hidden;
+        -webkit-transform: translateZ(0) scale(1.0, 1.0);
+      }
+
+    }
+
+    .text {
+      width: 60%;
+      margin-left: 10%;
+      float: left;
+    }
+
+    .title {
+      color: #000;
+      margin-top: 0;
+
+      a {
+        color: #000;
+        @include transition(color 0.2s ease-in-out);
+      }
+
+    }
+
+  }
+
+}
+
+
+/*
+** Article
+*/
+.article {
+
+  .contents {
+    position: relative;
+
+    .img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+  }
+
+  .text {
+    width: 100%;
+  }
+
+}
+
+
+/*
+**  Home
+*/
+#pitch {
+  background-color: $blue;
+  color: #fff;
+  text-align: center;
+  font-size: 1.5em;
+  font-family: 'Breve Slab Title Medium';
+
+  .container {
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+    max-width: 550px;
+  }
+
+  p {
+    margin-top: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
+#intro {
+  background-color: $offwhite;
+  color: $black;
+
+  .container {
+    padding-top: $gutter;
+    padding-bottom: $gutter;
+    max-width: 800px;
+  }
+
+  p {
+    margin-top: 0;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
+#carousel {
+  background-color: $offwhite;
+  padding: $gutter 0;
+
+  .item {
+    width: 100%;
+    height: 400px;
+    background-size: contain;
+    background-position: center center;
+    background-repeat: no-repeat;
+  }
+
+}
+
+
+/*
+**  About the Project
+*/
+#about-the-project {
+  background-color: $offwhite;
+  padding: $gutter 0;
+
+  p {
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
+
+/*
+**  About the Project
+*/
+#about-the-author {
+  background-color: $offwhite;
+  padding: $gutter 0;
+
+  p {
+
+    &:first-child {
+      margin-top: 0;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+
+  }
+
+}
+
+
+/*
+**  Contents
+*/
+.contents {
+
+  .content {
+    margin-bottom: $gutter;
+  }
+
+  .video-embed {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+
+    iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+  }
+
+}
