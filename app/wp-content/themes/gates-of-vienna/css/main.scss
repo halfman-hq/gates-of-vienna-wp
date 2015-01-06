@@ -61,7 +61,10 @@ body {
   font-family: 'Breve Slab Title Book';
 
   @media #{$mq-desktop} {
-    padding-bottom: 94px;
+    &.short-page {
+      padding-bottom: 94px;
+    }
+
   }
 
 }
@@ -109,14 +112,13 @@ body {
   background-color: $black;
   color: $green;
   text-align: center;
+  z-index: 100;
+}
+
+.short-page #footer {
+  position: absolute;
   left: 0;
   bottom: 0;
-  z-index: 100;
-
-  @media #{$mq-desktop} {
-    position: fixed;
-  }
-
 }
 
 
@@ -366,6 +368,10 @@ body {
 #carousel {
   background-color: $offwhite;
   padding: $gutter 0;
+  
+  .container {
+    position: relative;
+  }
 
   .item {
     width: 100%;
@@ -373,6 +379,33 @@ body {
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
+  }
+
+  .carousel-arrow-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: 0;
+    color: #869791;
+    opacity: 0.5;
+    padding: 0;
+    font-size: 1.25em;
+    background-color: $offwhite;
+    height: 100%;
+
+    &:hover {
+      opacity: 1;
+    }
+
+    &#carousel-prev {
+      left: 0;
+    }
+
+    &#carousel-next {
+      right: 0;
+    }
+
   }
 
 }

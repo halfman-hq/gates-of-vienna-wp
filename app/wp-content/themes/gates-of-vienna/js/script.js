@@ -15,6 +15,14 @@ GOV.carousel = function() {
 
 };
 
+GOV.carousel.btn = function(e) {
+
+  e.preventDefault();
+  var dir = $(this).data('dir');
+  $('.carousel-wrapper').trigger('owl.'+dir);
+
+};
+
 GOV.newsletter = function(e) {
 
   e.preventDefault();
@@ -30,6 +38,19 @@ GOV.newsletter = function(e) {
 
 };
 
+GOV.footer = function() {
+
+  var winHeight = $(window).height();
+  var bodyHeight = $(document.body).height();
+  if (winHeight > bodyHeight) {
+    $(document.body).addClass('short-page');
+  }
+
+};
+
 $(document).on('ready', GOV._init);
+$(document).on('ready', GOV.footer);
+
 $(document).on('ready', GOV.carousel);
+$('.carousel-arrow-btn').on('click', GOV.carousel.btn);
 $('#newsletter-form').on('submit', GOV.newsletter);

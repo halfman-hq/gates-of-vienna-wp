@@ -11,5 +11,7 @@
   endforeach; endif;
 ?>
     </div>
+    <button id="carousel-prev" class="carousel-arrow-btn" data-dir="prev"><span class="icon-left-open"></span></button>
+    <button id="carousel-next" class="carousel-arrow-btn" data-dir="next"><span class="icon-right-open"></span></button>
   </div>
 </section>
