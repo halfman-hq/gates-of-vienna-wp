@@ -32,10 +32,12 @@ $offwhite: #f7f8f1;
   transition: $var;
 }
 
-@mixin rotate($degrees) {
-  -webkit-transform: rotate($degrees);
-  -ms-transform: rotate($degrees);
-  transform: rotate($degrees);
+@mixin transform($transforms) {
+     -moz-transform: $transforms;
+       -o-transform: $transforms;
+      -ms-transform: $transforms;
+  -webkit-transform: $transforms;
+          transform: $transforms;
 }
 
 
@@ -384,7 +386,7 @@ body {
   .carousel-arrow-btn {
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    @include transform(translateY(-50%));
     background-color: transparent;
     border: 0;
     color: #869791;
