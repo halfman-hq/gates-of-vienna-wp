@@ -540,13 +540,24 @@ body {
 /*
 **  About the Project
 */
-#about-the-project {
+#abouts {
   background-color: $offwhite;
   padding: $gutter 0;
+}
+
+#about-the-project {
+  float: left;
+  width: 48%;
+
+  @media #{$mq-phone} {
+    width: 100%;
+    float: none;
+  }
 
   .title {
-    font-size: 1.5em;
+    font-size: 2.0em;
     text-align: center;
+    color: $blue;
   }
 
   p {
@@ -568,12 +579,18 @@ body {
 **  About the Project
 */
 #about-the-author {
-  background-color: $offwhite;
-  padding: $gutter 0;
+  float: right;
+  width: 48%;
+
+  @media #{$mq-phone} {
+    width: 100%;
+    float: none;
+  }
 
   .title {
-    font-size: 1.5em;
+    font-size: 2.0em;
     text-align: center;
+    color: $blue;
   }
 
   p {

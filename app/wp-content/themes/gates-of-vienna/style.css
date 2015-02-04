@@ -1092,13 +1092,25 @@ body {
 /*
 **  About the Project
 */
-#about-the-project {
+#abouts {
   background-color: #f7f8f1;
   padding: 20px 0;
 }
+
+#about-the-project {
+  float: left;
+  width: 48%;
+}
+@media only screen and (max-width: 767px) {
+  #about-the-project {
+    width: 100%;
+    float: none;
+  }
+}
 #about-the-project .title {
-  font-size: 1.5em;
+  font-size: 2.0em;
   text-align: center;
+  color: #b4dfe0;
 }
 #about-the-project p:first-child {
   margin-top: 0;
@@ -1111,12 +1123,19 @@ body {
 **  About the Project
 */
 #about-the-author {
-  background-color: #f7f8f1;
-  padding: 20px 0;
+  float: right;
+  width: 48%;
+}
+@media only screen and (max-width: 767px) {
+  #about-the-author {
+    width: 100%;
+    float: none;
+  }
 }
 #about-the-author .title {
-  font-size: 1.5em;
+  font-size: 2.0em;
   text-align: center;
+  color: #b4dfe0;
 }
 #about-the-author p:first-child {
   margin-top: 0;
