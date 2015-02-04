@@ -49,7 +49,7 @@ GOV.footer = function() {
 };
 
 $(document).on('ready', GOV._init);
-$(document).on('ready', GOV.footer);
+$(window).on('load', GOV.footer);
 
 $(document).on('ready', GOV.carousel);
 $('.carousel-arrow-btn').on('click', GOV.carousel.btn);

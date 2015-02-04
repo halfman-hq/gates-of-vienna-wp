@@ -675,7 +675,7 @@ a, a:hover, a:focus, button, button:focus {
 }
 
 body {
-  background-color: #f7f8f1;
+  background-color: #fff;
   color: #000;
   font-family: 'Breve Slab Title Book';
 }
@@ -693,7 +693,7 @@ body {
 ** Header
 */
 #header {
-  background-color: #260200;
+  background-color: #23334e;
   color: #fff;
   width: 100%;
   padding: 10px 0;
@@ -719,14 +719,28 @@ body {
   color: #b4dfe0;
 }
 
+#main-nav {
+  margin-bottom: 10px;
+}
+#main-nav .menu-link {
+  color: #cd1c00;
+  text-decoration: none;
+}
+#main-nav .menu-link + .menu-link {
+  margin-left: 10px;
+}
+#main-nav .menu-link:hover {
+  color: #fff;
+}
+
 /*
 **  Footer
 */
 #footer {
   width: 100%;
   padding: 20px 0;
-  background-color: #000;
-  color: #b9c991;
+  background-color: #23334e;
+  color: #b4dfe0;
   text-align: center;
   z-index: 100;
 }
@@ -742,7 +756,7 @@ body {
 */
 #content {
   position: relative;
-  background-color: #f7f8f1;
+  background-color: #fff;
   height: 100%;
 }
 
@@ -750,18 +764,24 @@ body {
 ** Grid
 */
 #blog-posts {
-  background-color: #f7f8f1;
+  background-color: #fff;
   padding-top: 20px;
   padding-bottom: 20px;
+}
+#blog-posts .blog-title {
+  font-size: 2.0em;
+  text-align: center;
+  margin-bottom: 10px;
+  color: #b4dfe0;
 }
 
 .grid .grid-item {
   display: block;
   float: left;
   width: 32%;
-  background-color: #b4dfe0;
   position: relative;
   text-decoration: none;
+  margin-bottom: 40px;
 }
 @media only screen and (max-width: 767px) {
   .grid .grid-item {
@@ -785,8 +805,15 @@ body {
   -webkit-transform: translateZ(0) scale(1, 1);
 }
 .grid .grid-item .title {
-  text-align: center;
+  text-align: left;
+  color: #cd1c00;
+  font-size: 1.0em;
+  margin-bottom: 0;
+}
+.grid .grid-item .time {
+  text-align: left;
   color: #000;
+  font-size: 0.85em;
 }
 .grid .grid-item:hover .img {
   opacity: 0.6;
@@ -799,32 +826,68 @@ body {
     margin-left: 0;
   }
 }
+.grid .grid-item:nth-child(3n+4) {
+  clear: both;
+  margin-left: 0;
+}
+
+#page-nav {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pager-link {
+  display: inline-block;
+  font-family: 'Breve Slab Title Medium';
+  margin: auto;
+  background-color: #b4dfe0;
+  color: #cd1c00;
+  border-radius: 4px;
+  border: 0;
+  margin-top: 10px;
+  padding: 6px 10px;
+  text-decoration: none;
+  -webkit-transition: background-color 0.2s ease-in-out;
+  -moz-transition: background-color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out;
+  -o-transition: background-color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out;
+}
+.pager-link:hover {
+  background-color: #23334e;
+}
 
 /*
 **  Newsletter Form
 */
 #newsletter {
-  background-color: #000;
-  color: #b9c991;
+  color: #b4dfe0;
 }
-#newsletter .label {
-  color: #b9c991;
+#newsletter .title {
+  font-size: 2.0em;
   text-align: center;
-  display: block;
-  margin-bottom: 10px;
+  margin-bottom: 0;
 }
 
 #newsletter-form {
   text-align: center;
-  padding: 20px 0;
+  padding: 0 0 20px;
+}
+
+#email {
+  border: 2px solid #b4dfe0;
+  background-color: #fff;
+  padding: 7px 10px;
+  margin-right: 10px;
+  font-size: 0.85em;
 }
 
 #newsletter-submit {
-  display: block;
+  display: inline-block;
   font-family: 'Breve Slab Title Medium';
   margin: auto;
-  background-color: #b9c991;
-  color: #000;
+  background-color: #b4dfe0;
+  color: #cd1c00;
   border-radius: 4px;
   border: 0;
   margin-top: 10px;
@@ -836,15 +899,23 @@ body {
   transition: background-color 0.2s ease-in-out;
 }
 #newsletter-submit:hover {
-  background-color: #b4dfe0;
+  background-color: #23334e;
 }
 
 /*
 **  Blog
 */
+.blog-title {
+  font-size: 2.0em;
+  text-align: center;
+  color: #b4dfe0;
+}
+
 .blog-posts {
-  padding-top: 40px;
-  min-height: 100vh;
+  background-color: #f7f8f1;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-bottom: 40px;
 }
 .blog-posts .post {
   display: block;
@@ -897,6 +968,20 @@ body {
 /*
 ** Article
 */
+.article .headers {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.article .headers a {
+  text-decoration: none;
+  color: #cd1c00;
+}
+.article .headers .tags {
+  margin-top: 20px;
+}
+.article .title {
+  color: #b4dfe0;
+}
 .article .contents {
   position: relative;
 }
@@ -908,13 +993,29 @@ body {
 .article .text {
   width: 100%;
 }
+.article #post-nav {
+  margin: 60px 0;
+}
+.article #post-nav .post-link {
+  width: 30%;
+  color: #cd1c00;
+  text-decoration: none;
+}
+.article #post-nav .post-link#previous-post {
+  float: left;
+  text-align: left;
+}
+.article #post-nav .post-link#next-post {
+  float: right;
+  text-align: right;
+}
 
 /*
 **  Home
 */
 #pitch {
   background-color: #b4dfe0;
-  color: #fff;
+  color: #23334e;
   text-align: center;
   font-size: 1.5em;
   font-family: 'Breve Slab Title Medium';

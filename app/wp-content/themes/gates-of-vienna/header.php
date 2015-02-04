@@ -3,10 +3,6 @@
 
     <div class="container">
 
-      <a href="/" id="logo" class="ir"><? bloginfo('name'); ?></a>
-
-      <button id="menu-btn" class="ir"></button>
-      
       <div id="main-nav" class="clearfix">
 <?
       $locations = get_nav_menu_locations();
@@ -28,6 +24,10 @@
 ?>
 
       </div>
+
+      <a href="/" id="logo" class="ir"><? bloginfo('name'); ?></a>
+
+      <button id="menu-btn" class="ir"></button>
 
     </div>
       

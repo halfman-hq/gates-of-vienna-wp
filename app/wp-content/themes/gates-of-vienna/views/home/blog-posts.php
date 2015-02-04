@@ -1,5 +1,6 @@
 <section id="blog-posts">
   <div class="container">
+    <h3 class="blog-title">Blog</h3>
     <div class="grid clearfix">
 <?
   $blog_args = array(
@@ -18,5 +19,10 @@
   endwhile; wp_reset_postdata();
 ?>
     </div>
+
+    <div id="page-nav">
+      <a href="/blog" class="pager-link">Older &raquo;</a>
+    </div>
+
   </div>
 </section>

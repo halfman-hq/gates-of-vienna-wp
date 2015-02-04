@@ -20,6 +20,8 @@ $blue: #b4dfe0;
 $green: #b9c991;
 $black: #000;
 $offwhite: #f7f8f1;
+$red: #cd1c00;
+$royal: #23334e;
 
 /*
 **  Mixins
@@ -58,7 +60,7 @@ a, a:hover, a:focus, button, button:focus {
 }
 
 body {
-  background-color: $offwhite;
+  background-color: #fff;
   color: #000;
   font-family: 'Breve Slab Title Book';
 
@@ -79,7 +81,7 @@ body {
 ** Header
 */
 #header {
-  background-color: $brown;
+  background-color: $royal;
   color: #fff;
   width: 100%;
   padding: 10px 0;
@@ -104,6 +106,25 @@ body {
 
 }
 
+#main-nav {
+  margin-bottom: 10px;
+
+  .menu-link {
+    color: $red;
+    text-decoration: none;
+
+    & + .menu-link {
+      margin-left: 10px;
+    }
+
+    &:hover {
+      color: #fff;
+    }
+
+  }
+
+}
+
 
 /*
 **  Footer
@@ -111,8 +132,8 @@ body {
 #footer {
   width: 100%;
   padding: $gutter 0;
-  background-color: $black;
-  color: $green;
+  background-color: $royal;
+  color: $blue;
   text-align: center;
   z-index: 100;
 }
@@ -129,7 +150,7 @@ body {
 */
 #content {
   position: relative;
-  background-color: $offwhite;
+  background-color: #fff;
   height: 100%;
 }
 
@@ -138,9 +159,17 @@ body {
 ** Grid
 */
 #blog-posts {
-  background-color: $offwhite;
+  background-color: #fff;
   padding-top: $gutter;
   padding-bottom: $gutter;
+
+  .blog-title {
+    font-size: 2.0em;
+    text-align: center;
+    margin-bottom: 10px;
+    color: $blue;
+  }
+
 }
 
 .grid {
@@ -149,9 +178,9 @@ body {
     display: block;
     float: left;
     width: 32%;
-    background-color: $blue;
     position: relative;
     text-decoration: none;
+    margin-bottom: 40px;
 
     @media #{$mq-phone} {
       width: 100%;
@@ -171,8 +200,16 @@ body {
     }
 
     .title {
-      text-align: center;
-      color: $black;
+      text-align: left;
+      color: $red;
+      font-size: 1.0em;
+      margin-bottom: 0;
+    }
+
+    .time {
+      text-align: left;
+      color: #000;
+      font-size: 0.85em;
     }
 
     &:hover .img {
@@ -187,7 +224,36 @@ body {
       }
 
     }
+
+    &:nth-child(3n+4) {
+      clear: both;
+      margin-left: 0;
+    }
     
+  }
+
+}
+
+#page-nav {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.pager-link {
+  display: inline-block;
+  font-family: 'Breve Slab Title Medium';
+  margin: auto;
+  background-color: $blue;
+  color: $red;
+  border-radius: 4px;
+  border: 0;
+  margin-top: $gutter/2;
+  padding: 6px 10px;
+  text-decoration: none;
+  @include transition(background-color 0.2s ease-in-out);
+
+  &:hover {
+    background-color: $royal;
   }
 
 }
@@ -197,29 +263,35 @@ body {
 **  Newsletter Form
 */
 #newsletter {
-  background-color: $black;
-  color: $green;
+  color: $blue;
 
-  .label {
-    color: $green;
+  .title {
+    font-size: 2.0em;
     text-align: center;
-    display: block;
-    margin-bottom: $gutter/2;
+    margin-bottom: 0;
   }
 
 }
 
 #newsletter-form {
   text-align: center;
-  padding: $gutter 0;
+  padding: 0 0 $gutter;
+}
+
+#email {
+  border: 2px solid $blue;
+  background-color: #fff;
+  padding: 7px 10px;
+  margin-right: 10px;
+  font-size: 0.85em;
 }
 
 #newsletter-submit {
-  display: block;
+  display: inline-block;
   font-family: 'Breve Slab Title Medium';
   margin: auto;
-  background-color: $green;
-  color: $black;
+  background-color: $blue;
+  color: $red;
   border-radius: 4px;
   border: 0;
   margin-top: $gutter/2;
@@ -227,17 +299,28 @@ body {
   @include transition(background-color 0.2s ease-in-out);
 
   &:hover {
-    background-color: $blue;
+    background-color: $royal;
   }
+
 }
 
 
 /*
 **  Blog
 */
+.blog-title {
+  font-size: 2.0em;
+  text-align: center;
+  color: $blue;
+}
+
 .blog-posts {
-  padding-top: 2*$gutter;
-  min-height: 100vh;
+  //  padding-top: 2*$gutter;
+  //  min-height: 100vh;
+  background-color: $offwhite;
+  padding-bottom: 20px;
+  padding-top: 20px;
+  margin-bottom: 40px;
 
   .post {
     display: block;
@@ -301,6 +384,25 @@ body {
 */
 .article {
 
+  .headers {
+    text-align: center;
+    margin-bottom: 20px;
+
+    a {
+      text-decoration: none;
+      color: $red;
+    }
+
+    .tags {
+      margin-top: 20px;
+    }
+
+  }
+
+  .title {
+    color: $blue;
+  }
+
   .contents {
     position: relative;
 
@@ -316,6 +418,28 @@ body {
     width: 100%;
   }
 
+  #post-nav {
+    margin: 60px 0;
+
+    .post-link {
+      width: 30%;
+      color: $red;
+      text-decoration: none;
+
+      &#previous-post {
+        float: left;
+        text-align: left;
+      }
+
+      &#next-post {
+        float: right;
+        text-align: right;
+      }
+
+    }
+
+  }
+
 }
 
 
@@ -324,7 +448,7 @@ body {
 */
 #pitch {
   background-color: $blue;
-  color: #fff;
+  color: $royal;
   text-align: center;
   font-size: 1.5em;
   font-family: 'Breve Slab Title Medium';
