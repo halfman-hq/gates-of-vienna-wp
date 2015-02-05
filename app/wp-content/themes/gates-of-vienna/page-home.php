@@ -9,7 +9,6 @@ get_header();
 ?>
 
   <? include TEMPLATEPATH.'/views/home/pitch.php'; ?>
-  <? include TEMPLATEPATH.'/views/home/intro.php'; ?>
   <? include TEMPLATEPATH.'/views/home/carousel.php'; ?>
   <? include TEMPLATEPATH.'/views/home/newsletter.php'; ?>
   <? include TEMPLATEPATH.'/views/home/blog-posts.php'; ?>
