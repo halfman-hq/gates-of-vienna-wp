@@ -10,7 +10,9 @@ GOV.carousel = function() {
     navigation : false,
     slideSpeed : 300,
     paginationSpeed : 400,
-    singleItem:true
+    singleItem:true,
+    //  Adjust 'autoPlay' for however long you want each slide to be there (in ms)
+    autoPlay: 4500
   })
 
 };
